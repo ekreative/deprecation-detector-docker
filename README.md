@@ -1,11 +1,11 @@
-# Php docker image
+# Php deprecation detector docker image
 
-Image used for running php tests on our ci server
+Image used for running deprecation-detector on our ci server
 
 ## Build command
 
-    docker build -t ekreative/php .
+    docker build -t ekreative/deprecation-detector .
 
 ## Build an app
 
-    docker run -ti --rm --volume=$(pwd):/opt/workspace ekreative/php ./bin/phpunit
+    docker run -ti --rm --volume=$(pwd):/srv -w /srv ekreative/deprecation-detector
